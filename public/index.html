@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Monopoly Tracker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div>
+        <h1>Live Monopoly Tracker</h1>
+        <p>College Event Edition</p>
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button id="newGameBtn" class="btn-primary">
+          <i class="fas fa-plus"></i> New Game
+        </button>
+        <button id="exportBtn" class="btn-secondary">
+          <i class="fas fa-download"></i> Export
+        </button>
+        <button id="importBtn" class="btn-secondary">
+          <i class="fas fa-upload"></i> Import
+        </button>
+      </div>
+    </header>
+    
+    <!-- Game Info Bar -->
+    <div class="card" id="gameInfoCard">
+      <div class="card-header">
+        <h2>Game #<span id="gameId">1</span></h2>
+        <div>
+          <span>Started: <span id="gameStartTime">2:30 PM</span></span> | 
+          <span>Duration: <span id="gameDuration">00:45:22</span></span> | 
+          <span>Players: <span id="playerCount">4</span></span>
+          <button id="editGameBtn" class="btn-secondary" style="margin-left: 0.5rem;">
+            <i class="fas fa-edit"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Main Tabs -->
+    <div class="tabs">
+      <div class="tab active" data-tab="players">Players</div>
+      <div class="tab" data-tab="properties">Properties</div>
+      <div class="tab" data-tab="transactions">Transactions</div>
+      <div class="tab" data-tab="events">Game Events</div>
+      <div class="tab" data-tab="stats">Statistics</div>
+    </div>
+    
+    <!-- Tab Content -->
+    <div id="tabContent">
+      <!-- Players Tab (Default Active) -->
+      <div id="playersTab" class="tab-content">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+          <h3>Players</h3>
+          <button id="addPlayerBtn" class="btn-success">
+            <i class="fas fa-user-plus"></i> Add Player
+          </button>
+        </div>
+        
+        <div id="playersList">
+          <!-- Player 1 -->
+          <div class="card player-card" style="border-left-color: #ff4136;">
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between;">
+                <h3>Player 1</h3>
+                <div>
+                  <button class="btn-secondary action-btn player-edit-btn" data-player="1">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn-danger action-btn player-delete-btn" data-player="1">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem;">
+                <div>
+                  <strong>Cash:</strong> $<span class="player-cash">1500</span>
+                  <button class="btn-secondary action-btn cash-edit-btn" data-player="1">
+                    <i class="fas fa-dollar-sign"></i>
+                  </button>
+                </div>
+                <div>
+                  <strong>Position:</strong> <span class="player-position">Go (0)</span>
+                  <button class="btn-secondary action-btn position-edit-btn" data-player="1">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </button>
+                </div>
+                <div>
+                  <strong>Status:</strong> <span class="player-status">Active</span>
+                </div>
+                <div>
+                  <strong>Get Out of Jail Cards:</strong> <span class="player-jail-cards">0</span>
+                </div>
+              </div>
+              <div style="margin-top: 0.5rem;">
+                <strong>Properties:</strong>
+                <div class="property-list">
+                  <span class="property-chip badge-brown">Mediterranean Ave</span>
+                  <span class="property-chip badge-brown">Baltic Ave</span>
+                  <span class="property-chip badge-light-blue">Oriental Ave</span>
+                </div>
+              </div>
+              <div style="margin-top: 1rem;">
+                <button class="btn-primary action-btn" onclick="showTransactionModal(1)">
+                  <i class="fas fa-exchange-alt"></i> Transaction
+                </button>
+                <button class="btn-secondary action-btn" onclick="showJailModal(1)">
+                  <i class="fas fa-jail"></i> Jail Actions
+                </button>
+                <button class="btn-secondary action-btn" onclick="showPropertyModal(1)">
+                  <i class="fas fa-home"></i> Property Actions
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Player 2 -->
+          <div class="card player-card" style="border-left-color: #0074d9;">
+            <div class="card-body">
+              <div style="display: flex; justify-content: space-between;">
+                <h3>Player 2</h3>
+                <div>
+                  <button class="btn-secondary action-btn player-edit-btn" data-player="2">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn-danger action-btn player-delete-btn" data-player="2">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- Additional details for Player 2 would go here... -->
+              <div style="margin-top: 1rem;">
+                <button class="btn-primary action-btn" onclick="showTransactionModal(2)">
+                  <i class="fas fa-exchange-alt"></i> Transaction
+                </button>
+                <button class="btn-secondary action-btn" onclick="showJailModal(2)">
+                  <i class="fas fa-jail"></i> Jail Actions
+                </button>
+                <button class="btn-secondary action-btn" onclick="showPropertyModal(2)">
+                  <i class="fas fa-home"></i> Property Actions
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Add more player cards as needed -->
+        </div>
+      </div>
+      
+      <!-- Other tab content placeholders for Properties, Transactions, Events, and Stats -->
+      <div id="propertiesTab" class="tab-content hidden">
+        <h3>Properties</h3>
+        <!-- Properties content goes here -->
+      </div>
+      <div id="transactionsTab" class="tab-content hidden">
+        <h3>Transactions</h3>
+        <!-- Transactions content goes here -->
+      </div>
+      <div id="eventsTab" class="tab-content hidden">
+        <h3>Game Events</h3>
+        <!-- Game events content goes here -->
+      </div>
+      <div id="statsTab" class="tab-content hidden">
+        <h3>Statistics</h3>
+        <!-- Statistics content goes here -->
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+</body>
+</html>
