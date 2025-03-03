@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Dashboard - College Monopoly</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/api/placeholder/100/100" alt="Monopoly Logo">
+            <h1>College Monopoly Championship</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html" class="active">Game Dashboard</a></li>
+                <li><a href="profiles.html">Players</a></li>
+                <li><a href="bank.html">Bank</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="rules.html">Rules</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="dashboard-container">
+        <aside class="game-status">
+            <div class="current-player">
+                <img src="/api/placeholder/80/80" alt="Player Avatar" class="avatar">
+                <h2>John Doe</h2>
+                <p class="player-role">Current Player</p>
+            </div>
+            
+            <div class="player-stats">
+                <div class="stat">
+                    <i class="fas fa-coins"></i>
+                    <div class="stat-info">
+                        <h3>Cash Balance</h3>
+                        <p class="balance">$1,500</p>
+                    </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-home"></i>
+                    <div class="stat-info">
+                        <h3>Properties</h3>
+                        <p>5 Properties</p>
+                    </div>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-chart-line"></i>
+                    <div class="stat-info">
+                        <h3>Net Worth</h3>
+                        <p>$2,850</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-actions">
+                <button class="action-btn" id="rollDice">
+                    <i class="fas fa-dice"></i> Roll Dice
+                </button>
+                <button class="action-btn" id="endTurn">
+                    <i class="fas fa-arrow-right"></i> End Turn
+                </button>
+                <button class="action-btn" id="payJail">
+                    <i class="fas fa-unlock"></i> Pay Bail ($50)
+                </button>
+            </div>
+        </aside>
+
+        <section class="main-board">
+            <div class="game-info-header">
+                <h2>Game #28493</h2>
+            </div>
+
+            <div class="recent-activity">
+                <h3>Recent Activity</h3>
+                <ul class="activity-feed">
+                    <li class="activity-item">
+                        <span class="activity-time">2:45 PM</span>
+                        <span class="activity-text"><strong>Sarah</strong> bought Park Place for $350</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:42 PM</span>
+                        <span class="activity-text"><strong>John</strong> paid $200 rent to <strong>Michael</strong></span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:40 PM</span>
+                        <span class="activity-text"><strong>Michael</strong> drew a Chance card: "Advance to Go"</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:38 PM</span>
+                        <span class="activity-text"><strong>Sarah</strong> rolled doubles and moved to Boardwalk</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:35 PM</span>
+                        <span class="activity-text"><strong>Emily</strong> collected $200 for passing GO</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:33 PM</span>
+                        <span class="activity-text"><strong>John</strong> paid $150 to get out of jail</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:30 PM</span>
+                        <span class="activity-text"><strong>Michael</strong> landed on Income Tax and paid $200</span>
+                    </li>
+                    <li class="activity-item">
+                        <span class="activity-time">2:28 PM</span>
+                        <span class="activity-text"><strong>Sarah</strong> built a house on St. James Place</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <aside class="player-list">
+            <h3>Players</h3>
+            <ul class="players">
+                <li class="player active">
+                    <img src="/api/placeholder/40/40" alt="John" class="player-avatar">
+                    <div class="player-info">
+                        <h4>John Doe</h4>
+                        <p class="player-cash">$1,500</p>
+                    </div>
+                    <span class="player-turn-indicator">Current Turn</span>
+                </li>
+                <li class="player">
+                    <img src="/api/placeholder/40/40" alt="Sarah" class="player-avatar">
+                    <div class="player-info">
+                        <h4>Sarah Johnson</h4>
+                        <p class="player-cash">$1,280</p>
+                    </div>
+                </li>
+                <li class="player">
+                    <img src="/api/placeholder/40/40" alt="Michael" class="player-avatar">
+                    <div class="player-info">
+                        <h4>Michael Brown</h4>
+                        <p class="player-cash">$800</p>
+                    </div>
+                    <span class="player-status jail">In Jail</span>
+                </li>
+                <li class="player">
+                    <img src="/api/placeholder/40/40" alt="Emily" class="player-avatar">
+                    <div class="player-info">
+                        <h4>Emily Chen</h4>
+                        <p class="player-cash">$2,150</p>
+                    </div>
+                </li>
+            </ul>
+            
+            <div class="quick-actions">
+                <h3>Quick Actions</h3>
+                <button class="quick-action-btn" id="newTransaction">
+                    <i class="fas fa-exchange-alt"></i> New Transaction
+                </button>
+                <button class="quick-action-btn" id="viewProperties">
+                    <i class="fas fa-home"></i> View My Properties
+                </button>
+                <button class="quick-action-btn" id="tradeOffer">
+                    <i class="fas fa-handshake"></i> Make Trade Offer
+                </button>
+                <button class="quick-action-btn" id="drawCard">
+                    <i class="fas fa-cards"></i> Draw Card
+                </button>
+            </div>
+        </aside>
+    </main>
+
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>New Transaction</h2>
+            <form id="transactionForm">
+                <div class="form-group">
+                    <label for="transactionType">Transaction Type</label>
+                    <select id="transactionType">
+                        <option value="payment">Payment</option>
+                        <option value="collect">Collect</option>
+                        <option value="fine">Pay Fine</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="recipient">Recipient</label>
+                    <select id="recipient">
+                        <option value="bank">Bank</option>
+                        <option value="player2">Sarah Johnson</option>
+                        <option value="player3">Michael Brown</option>
+                        <option value="player4">Emily Chen</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" min="1" value="100">
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason (Optional)</label>
+                    <input type="text" id="reason" placeholder="e.g., Rent for Boardwalk">
+                </div>
+                <button type="submit" class="btn-primary">Complete Transaction</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/api/placeholder/50/50" alt="Logo">
+                <p>College Monopoly Championship</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="rules.html">Game Rules</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 College Monopoly Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./javascript/dashboard.js"></script>
+</body>
+</html>

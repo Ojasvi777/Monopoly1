@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Rules - College Monopoly</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/rules.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/api/placeholder/100/100" alt="Monopoly Logo">
+            <h1>College Monopoly Championship</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Game Dashboard</a></li>
+                <li><a href="profiles.html">Players</a></li>
+                <li><a href="bank.html">Bank</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="rules.html" class="active">Rules</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="rules-container">
+        <section class="rules-header">
+            <div class="rules-title">
+                <h2><i class="fas fa-gavel"></i> Official Game Rules</h2>
+                <p>The complete rulebook for the College Monopoly Championship</p>
+            </div>
+            <div class="rules-search">
+                <input type="text" id="rulesSearch" placeholder="Search rules...">
+                <button id="searchBtn" class="btn-primary">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </section>
+
+        <div class="rules-content">
+            <aside class="rules-navigation">
+                <div class="rules-nav-header">
+                    <h3 style="text-align: center;">Quick Navigation</h3>
+                </div>
+                <ul class="rules-nav-menu">
+                    <li class="active"><a href="#objective"><i class="fas fa-bullseye"></i> Game Objective</a></li>
+                    <li><a href="#setup"><i class="fas fa-chess-board"></i> Game Setup</a></li>
+                    <li><a href="#gameplay"><i class="fas fa-play"></i> Gameplay Basics</a></li>
+                    <li><a href="#buying"><i class="fas fa-shopping-cart"></i> Buying Properties</a></li>
+                    <li><a href="#rent"><i class="fas fa-hand-holding-usd"></i> Rent & Buildings</a></li>
+                    <li><a href="#special"><i class="fas fa-star"></i> Special Spaces</a></li>
+                    <li><a href="#cards"><i class="fas fa-cards"></i> Community & Chance</a></li>
+                    <li><a href="#jail"><i class="fas fa-jail"></i> Jail Rules</a></li>
+                    <li><a href="#trading"><i class="fas fa-exchange-alt"></i> Trading</a></li>
+                    <li><a href="#bankruptcy"><i class="fas fa-skull-crossbones"></i> Bankruptcy</a></li>
+                    <li><a href="#winning"><i class="fas fa-trophy"></i> Winning the Game</a></li>
+                    <li><a href="#tournament"><i class="fas fa-medal"></i> Tournament Rules</a></li>
+                    <li><a href="#house"><i class="fas fa-home"></i> House Rules</a></li>
+                    <li><a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                </ul>
+                <div class="rules-download">
+                    <a href="#" class="btn-primary download-btn">
+                        <i class="fas fa-download"></i> Download PDF Rules
+                    </a>
+                </div>
+            </aside>
+
+            <div class="rules-sections">
+                <section id="objective" class="rule-section">
+                    <h3>Game Objective</h3>
+                    <div class="rule-content">
+                        <p>The objective of Monopoly is to become the wealthiest player through buying, renting, and selling of property.</p>
+                        <p>Players move around the game board buying properties, collecting rent from their opponents, with the goal of driving them into bankruptcy. Money can also be gained or lost through Chance and Community Chest cards and tax squares. Players receive a salary every time they pass "GO".</p>
+                    </div>
+                </section>
+
+                <section id="setup" class="rule-section">
+                    <h3>Game Setup</h3>
+                    <div class="rule-content">
+                        <h4>Equipment</h4>
+                        <ul class="rule-list">
+                            <li>1 game board with 40 spaces including properties, railroads, utilities, and special spaces</li>
+                            <li>8 tokens (game pieces)</li>
+                            <li>28 property cards</li>
+                            <li>16 Chance cards</li>
+                            <li>16 Community Chest cards</li>
+                            <li>32 houses and 12 hotels</li>
+                            <li>2 dice</li>
+                            <li>Money in various denominations</li>
+                        </ul>
+
+                        <h4>Starting the Game</h4>
+                        <ol class="rule-list numbered">
+                            <li>Each player selects a token to represent them as they move around the board.</li>
+                            <li>Each player receives $1,500 in Monopoly money distributed as follows:
+                                <ul>
+                                    <li>2 × $500</li>
+                                    <li>2 × $100</li>
+                                    <li>2 × $50</li>
+                                    <li>6 × $20</li>
+                                    <li>5 × $10</li>
+                                    <li>5 × $5</li>
+                                    <li>5 × $1</li>
+                                </ul>
+                            </li>
+                            <li>Select one player to be the banker. The banker manages the bank's money and property.</li>
+                            <li>Shuffle the Chance and Community Chest cards and place them face down on their designated spaces on the board.</li>
+                            <li>Each player rolls the dice. The highest roller goes first, and play proceeds clockwise.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="gameplay" class="rule-section">
+                    <h3>Gameplay Basics</h3>
+                    <div class="rule-content">
+                        <h4>Taking a Turn</h4>
+                        <ol class="rule-list numbered">
+                            <li>Roll both dice and move your token the corresponding number of spaces clockwise around the board.</li>
+                            <li>When you land on a space, take the action required by that space:</li>
+                            <ul>
+                                <li>If you land on an unowned property, you may buy it from the bank or put it up for auction.</li>
+                                <li>If you land on an owned property, you must pay rent to the owner.</li>
+                                <li>If you land on Chance or Community Chest, draw the top card and follow its instructions.</li>
+                                <li>If you land on a tax space, pay the indicated amount to the bank.</li>
+                                <li>If you land on Free Parking, nothing happens.</li>
+                                <li>If you land on Go to Jail, move directly to Jail.</li>
+                            </ul>
+                            <li>If you roll doubles (same number on both dice), take your turn as normal and then roll again. If you roll doubles three times in a row, go directly to Jail.</li>
+                        </ol>
+
+                        <h4>Passing GO</h4>
+                        <p>When you pass or land on the GO space, collect $200 from the bank.</p>
+                    </div>
+                </section>
+
+                <section id="buying" class="rule-section">
+                    <h3>Buying Properties</h3>
+                    <div class="rule-content">
+                        <p>When you land on an unowned property, you have two options:</p>
+                        
+                        <h4>Option 1: Buy the Property</h4>
+                        <p>Pay the price listed on the board to the bank and receive the property card.</p>
+                        
+                        <h4>Option 2: Auction the Property</h4>
+                        <p>If you choose not to buy the property at the listed price, it is auctioned to the highest bidder, starting at any price. All players, including the one who declined to buy it at the listed price, may bid.</p>
+                        
+                        <h4>Property Groups</h4>
+                        <p>Properties are organized into color groups. Owning all properties in a color group (a monopoly) allows you to build houses and hotels and collect double rent on unimproved properties.</p>
+                    </div>
+                </section>
+
+                <section id="rent" class="rule-section">
+                    <h3>Rent & Buildings</h3>
+                    <div class="rule-content">
+                        <h4>Collecting Rent</h4>
+                        <p>When another player lands on your property, they must pay you rent as specified on the property card. Rent varies based on:</p>
+                        <ul class="rule-list">
+                            <li>Whether you own the complete color group (double rent for unimproved properties)</li>
+                            <li>Number of houses or hotels built on the property</li>
+                            <li>For railroads, rent depends on how many railroads you own</li>
+                            <li>For utilities, rent depends on the dice roll and whether you own one or both utilities</li>
+                        </ul>
+                        
+                        <h4>Building Houses and Hotels</h4>
+                        <p>Once you own all properties in a color group, you may build houses on them:</p>
+                        <ul class="rule-list">
+                            <li>Houses must be built evenly (no property can have more than one house than any other property in the group)</li>
+                            <li>Houses cost the amount shown on the property card</li>
+                            <li>You may build up to 4 houses on a property</li>
+                            <li>After building 4 houses, you may purchase a hotel (replacing the 4 houses)</li>
+                        </ul>
+                        
+                        <div class="rule-table-container">
+                            <h4>Building Costs</h4>
+                            <table class="rule-table">
+                                <thead>
+                                    <tr>
+                                        <th>Color Group</th>
+                                        <th>Cost per House</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Brown & Light Blue</td>
+                                        <td>$50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pink & Orange</td>
+                                        <td>$100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Red & Yellow</td>
+                                        <td>$150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Green & Dark Blue</td>
+                                        <td>$200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="special" class="rule-section">
+                    <h3>Special Spaces</h3>
+                    <div class="rule-content">
+                        <div class="special-spaces">
+                            <div class="special-space">
+                                <h4>GO</h4>
+                                <p>Collect $200 when you pass or land on this space.</p>
+                            </div>
+                            
+                            <div class="special-space">
+                                <h4>Jail / Just Visiting</h4>
+                                <p>If you are "Just Visiting," there is no effect. If you are in Jail, see Jail Rules section.</p>
+                            </div>
+                            
+                            <div class="special-space">
+                                <h4>Free Parking</h4>
+                                <p>No effect in standard rules. (Some house rules put money collected from taxes here.)</p>
+                            </div>
+                            
+                            <div class="special-space">
+                                <h4>Go to Jail</h4>
+                                <p>Move directly to Jail without collecting $200.</p>
+                            </div>
+                            
+                            <div class="special-space">
+                                <h4>Income Tax</h4>
+                                <p>Pay $200 to the bank.</p>
+                            </div>
+                            
+                            <div class="special-space">
+                                <h4>Luxury Tax</h4>
+                                <p>Pay $100 to the bank.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="cards" class="rule-section">
+                    <h3>Community Chest & Chance Cards</h3>
+                    <div class="rule-content">
+                        <div class="cards-container">
+                            <div class="card-section">
+                                <h4>Community Chest Cards</h4>
+                                <p>When you land on a Community Chest space, draw the top card from the Community Chest deck and follow its instructions. These cards typically involve:</p>
+                                <ul class="rule-list">
+                                    <li>Collecting or paying money</li>
+                                    <li>Moving to a different space</li>
+                                    <li>Get Out of Jail Free card</li>
+                                </ul>
+                                <div class="card-example community">
+                                    <p>Bank error in your favor. Collect $200.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="card-section">
+                                <h4>Chance Cards</h4>
+                                <p>When you land on a Chance space, draw the top card from the Chance deck and follow its instructions. These cards typically involve:</p>
+                                <ul class="rule-list">
+                                    <li>Moving to a specific space</li>
+                                    <li>Collecting or paying money</li>
+                                    <li>Get Out of Jail Free card</li>
+                                </ul>
+                                <div class="card-example chance">
+                                    <p>Advance to GO. Collect $200.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="jail" class="rule-section">
+                    <h3>Jail Rules</h3>
+                    <div class="rule-content">
+                        <h4>Going to Jail</h4>
+                        <p>You are sent to Jail when:</p>
+                        <ul class="rule-list">
+                            <li>You land on the "Go to Jail" space</li>
+                            <li>You draw a card that sends you to Jail</li>
+                            <li>You roll doubles three times in a row on your turn</li>
+                        </ul>
+                        
+                        <h4>Getting Out of Jail</h4>
+                        <p>You have three options to get out of Jail:</p>
+                        <ol class="rule-list numbered">
+                            <li>Pay a $50 fine at the start of your turn, then roll and move as normal.</li>
+                            <li>Use a "Get Out of Jail Free" card if you have one.</li>
+                            <li>Wait in Jail for three turns. On each turn, roll the dice; if you roll doubles, you get out of Jail for free, move the number of spaces shown, and your turn is over (you do not roll again for rolling doubles).</li>
+                        </ol>
+                        
+                        <p>If you do not roll doubles by your third turn in Jail, you must pay the $50 fine and move the number of spaces shown on the dice.</p>
+                        
+                        <h4>While in Jail</h4>
+                        <p>While in Jail, you can still collect rent on your properties and participate in auctions and trades.</p>
+                    </div>
+                </section>
+
+                <!-- More sections would be added here for trading, bankruptcy, winning, tournament rules, house rules, and FAQ -->
+                <!-- I've provided comprehensive examples of the first few sections to establish the pattern -->
+
+                <section id="trading" class="rule-section">
+                    <h3>Trading</h3>
+                    <div class="rule-content">
+                        <p>Players may trade properties, Get Out of Jail Free cards, and money with each other at any time. All trades must be agreeable to both parties.</p>
+                        
+                        <h4>Trading Rules</h4>
+                        <ul class="rule-list">
+                            <li>Houses and hotels must be sold back to the bank before a property can be traded.</li>
+                            <li>Properties with houses or hotels on any property in that color group cannot be traded.</li>
+                            <li>All trades must be completed with the active player before dice are rolled for the next turn.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="bankruptcy" class="rule-section">
+                    <h3>Bankruptcy</h3>
+                    <div class="rule-content">
+                        <p>You are declared bankrupt when you owe more money than you can pay to either another player or the bank.</p>
+                        
+                        <h4>Bankruptcy to Another Player</h4>
+                        <p>If you owe another player more than you can pay, you must give all your assets to that player, including:</p>
+                        <ul class="rule-list">
+                            <li>All money</li>
+                            <li>All property cards</li>
+                            <li>Get Out of Jail Free cards</li>
+                        </ul>
+                        <p>The player who receives your assets must pay the bank for any mortgaged properties they receive.</p>
+                        
+                        <h4>Bankruptcy to the Bank</h4>
+                        <p>If you owe the bank more than you can pay, all your assets are returned to the bank. Properties are auctioned off to the highest bidder.</p>
+                    </div>
+                </section>
+
+                <section id="winning" class="rule-section">
+                    <h3>Winning the Game</h3>
+                    <div class="rule-content">
+                        <p>The last player remaining after all others have gone bankrupt is the winner.</p>
+                        
+                        <h4>Time Limit Games</h4>
+                        <p>If playing with a time limit:</p>
+                        <ol class="rule-list numbered">
+                            <li>Set an agreed time limit before the game begins.</li>
+                            <li>When time expires, players count their assets:</li>
+                            <ul>
+                                <li>Cash on hand</li>
+                                <li>Properties owned, at purchase price</li>
+                                <li>Houses and hotels at purchase price</li>
+                                <li>Mortgaged properties at half their purchase price</li>
+                            </ul>
+                            <li>The player with the highest total assets wins.</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="tournament" class="rule-section">
+                    <h3>Tournament Rules</h3>
+                    <div class="rule-content">
+                        <p>For the College Monopoly Championship, these additional rules apply:</p>
+                        
+                        <h4>Tournament Format</h4>
+                        <ul class="rule-list">
+                            <li>Games are played in rounds with 4 players per table.</li>
+                            <li>Each game has a 90-minute time limit.</li>
+                            <li>The winner from each table advances to the next round.</li>
+                            <li>In the final round, the last player remaining or the player with the highest net worth at time limit is the champion.</li>
+                        </ul>
+                        
+                        <h4>Scoring System</h4>
+                        <p>Players are awarded points based on:</p>
+                        <ul class="rule-list">
+                            <li>Final placement in each game</li>
+                            <li>Total assets at the end of the game</li>
+                            <li>Number of monopolies obtained</li>
+                            <li>Number of opponents bankrupted</li>
+                        </ul>
+                        
+                        <h4>Tiebreakers</h4>
+                        <p>In case of a tie at time limit, the following tiebreakers apply in order:</p>
+                        <ol class="rule-list numbered">
+                            <li>Total cash on hand</li>
+                            <li>Number of properties owned</li>
+                            <li>Number of houses and hotels</li>
+                            <li>Total property value</li>
+                        </ol>
+                    </div>
+                </section>
+
+                <section id="house" class="rule-section">
+                    <h3>House Rules</h3>
+                    <div class="rule-content">
+                        <p>The following house rules are approved for use in the College Monopoly Championship:</p>
+                        
+                        <div class="house-rules">
+                            <div class="house-rule">
+                                <h4>Free Parking Jackpot</h4>
+                                <p>All money paid in taxes and fees goes to the center of the board. When a player lands on Free Parking, they collect all the money.</p>
+                                <p class="rule-status approved">Approved for casual games only</p>
+                            </div>
+                            
+                            <div class="house-rule">
+                                <h4>Double GO Salary</h4>
+                                <p>Collect $400 instead of $200 when landing exactly on GO.</p>
+                                <p class="rule-status not-approved">Not approved for tournament play</p>
+                            </div>
+                            
+                            <div class="house-rule">
+                                <h4>No Auction Rule</h4>
+                                <p>Properties that are not purchased by the player landing on them remain available until a player lands on them again.</p>
+                                <p class="rule-status not-approved">Not approved for tournament play</p>
+                            </div>
+                            
+                            <div class="house-rule">
+                                <h4>Property Limit</h4>
+                                <p>A limit on the number of properties (including houses and hotels) a player can own to prevent monopolistic practices.</p>
+                                <p class="rule-status not-approved">Not approved for tournament play</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="faq" class="rule-section">
+                    <h3>Frequently Asked Questions</h3>
+                    <div class="rule-content">
+                        <div class="faq-item">
+                            <h4>Do I collect rent if I don't notice another player landed on my property?</h4>
+                            <p>You must ask for rent before the next player rolls the dice. If you forget to collect rent, you can't collect it retroactively.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Can I build houses on just one property in a color group?</h4>
+                            <p>No, you must build houses evenly across all properties in a color group. No property can have more than one house than any other property in the group.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Can I collect rent while in Jail?</h4>
+                            <p>Yes, you can still collect rent while in Jail.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>Can I mortgage properties that have houses on them?</h4>
+                            <p>No, you must sell all houses and hotels on all properties in a color group back to the bank before mortgaging any property in that group.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>What happens if the bank runs out of houses or hotels?</h4>
+                            <p>If there are no more houses available in the bank, players must wait for other players to sell houses back to the bank. No improvised houses are allowed.</p>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <h4>What happens if the bank runs out of money?</h4>
+                            <p>The bank never runs out of money. If needed, the banker can create additional money by writing on ordinary paper.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/api/placeholder/50/50" alt="Logo">
+                <p>College Monopoly Championship</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="rules.html">Game Rules</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <h4>Follow Us</h4>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 College Monopoly Event. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/rules.js"></script>
+</body>
+</html>
