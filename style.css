@@ -1,0 +1,144 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* General Styles */
+body {
+    background-color: #f4f7fa;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+}
+
+/* Button Styles */
+button {
+    border-radius: 25px;
+    background: linear-gradient(45deg, #ff0000, #e90000);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 114, 187, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(45deg, #ff0101, #890000);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(187, 0, 0, 0.25);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Card Styles */
+.player-card, .property-card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    transition: all 0.3s ease;
+    border-left: 4px solid #0072bb;
+}
+
+.player-card:hover, .property-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Input and Select Styles */
+input[type="text"], input[type="number"], select {
+    border: 1px solid #e1e5eb;
+    border-radius: 25px;
+    padding: 12px 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background-color: #f8fafc;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    border-color: #0072bb;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 114, 187, 0.1);
+    background-color: #fff;
+}
+
+/* Color Schemes for Property Groups */
+.brown { background-color: #955436; }
+.light-blue { background-color: #aae0fa; }
+.pink { background-color: #d93a96; }
+.orange { background-color: #f7941d; }
+.red { background-color: #ed1b24; }
+.yellow { background-color: #fef200; }
+.green { background-color: #1fb25a; }
+.dark-blue { background-color: #0072bb; }
+.railroad { background-color: #221e1f; }
+.utility { background-color: #6d6e71; }
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff0000;
+}
