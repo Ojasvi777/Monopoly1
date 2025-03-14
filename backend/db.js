@@ -4,7 +4,7 @@ const pool = createPool({
   connectionLimit: 10,
   host: 'localhost',
   user: 'root',  // Replace with your MySQL username
-  password: 'Ojjasvi@123',
+  password: '',
   database: 'monopoly_tracker'
 });
 
